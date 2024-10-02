@@ -19,8 +19,20 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  // Código para verificar el tema antes del montaje de React
+  const setInitialTheme = `
+    (function() {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  `;
+
   return (
     <html lang="en">
+      <head>
+        {/* Inyectamos el script antes de que React se cargue */}
+        <script dangerouslySetInnerHTML={{ __html: setInitialTheme }} />
+      </head>
       {/* <body className={`${geistSans.variable} ${geistMono.variable}`}> */}
       <body>
         <Navbar />
