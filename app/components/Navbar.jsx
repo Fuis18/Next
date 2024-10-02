@@ -1,5 +1,5 @@
 "use client"
-import '../styles/header.css';
+import '@/public/styles/header.css';
 import Home from './NavBar/Home';
 import Time from './NavBar/Time';
 import Mode from './NavBar/Mode';
