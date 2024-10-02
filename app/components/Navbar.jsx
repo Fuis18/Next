@@ -7,19 +7,22 @@ import Config from './NavBar/Config';
 
 import { useState, useEffect } from "react";
 
-
 export default function Navbar() {
-  // Cambiar de modo
-  const [theme, setTheme] = useState("light");
+  // Inicializar el estado del tema basado en el valor almacenado en localStorage
+  const [theme, setTheme] = useState(() => {
+    // Obtener el tema guardado en localStorage o usar 'light' por defecto
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("theme") || "light";
+    }
+    return "light"; // Valor por defecto si no se puede acceder a localStorage
+  });
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme) {
-      setTheme(savedTheme);
-      document.documentElement.setAttribute("data-theme", savedTheme);
-    }
-  }, []);
+    // Establecer el atributo data-theme en el elemento html según el tema actual
+    document.documentElement.setAttribute("data-theme", theme);
+  }, [theme]);
 
+  // Función para alternar entre los temas claro y oscuro
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
@@ -47,5 +50,5 @@ export default function Navbar() {
         <Config/>
       </nav>
     </header>
-  )
+  );
 }
