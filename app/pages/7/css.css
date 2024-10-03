@@ -1,0 +1,12 @@
+.f7 {
+  color: var(--color-text);
+}
+#sitio {
+  text-align: center;
+  font-size: 5rem;
+  border-radius: 50px;
+}
+.text div {
+  display: inline-block;
+  margin-right: 5px;
+}
