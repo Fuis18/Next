@@ -1,7 +1,7 @@
 // import Sun from './Sun';
 // import Moon from './Moon';
 
-export default function Mode({ toggleTheme, theme }) {
+export default function Mode() {
   return (<></>
     // <svg
     //   viewBox="0 0 24 24"
