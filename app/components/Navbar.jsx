@@ -1,8 +1,8 @@
 "use client"
 import '@/public/styles/header.css';
 // import Home from './NavBar/Home';
-// import Time from './NavBar/Time';
-// import Mode from './NavBar/Mode';
+import Time from './NavBar/Time';
+import Mode from './NavBar/Mode';
 // import Newsletter from './NavBar/Newsletter';
 // import Config from './NavBar/Config';
 
@@ -34,7 +34,7 @@ export default function Navbar() {
         {/* Home */}
         {/* <Home/> */}
         {/* Time */}
-        {/* <Time/> */}
+        <Time/>
       </nav>
       {/* Search */}
       <div></div>
@@ -42,9 +42,9 @@ export default function Navbar() {
         {/* Newsletter */}
         {/* <Newsletter/> */}
         {/* Mode */}
-        {/* <Mode toggleTheme={toggleTheme} theme={theme}/> */}
+        <Mode toggleTheme={toggleTheme} theme={theme}/>
         {/* Lenguage */}
-        {/* <div>ES</div> */}
+        <div>ES</div>
         {/* Config */}
         {/* <Config/> */}
       </nav>
