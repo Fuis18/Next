@@ -2,7 +2,7 @@
 import '@/public/styles/header.css';
 // import Home from './NavBar/Home';
 import Time from './NavBar/Time';
-import Mode from './NavBar/Mode';
+// import Mode from './NavBar/Mode';
 // import Newsletter from './NavBar/Newsletter';
 // import Config from './NavBar/Config';
 
