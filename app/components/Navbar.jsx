@@ -1,10 +1,10 @@
 "use client"
 import '@/public/styles/header.css';
-import Home from './NavBar/Home';
-import Time from './NavBar/Time';
-import Mode from './NavBar/Mode';
-import Newsletter from './NavBar/Newsletter';
-import Config from './NavBar/Config';
+// import Home from './NavBar/Home';
+// import Time from './NavBar/Time';
+// import Mode from './NavBar/Mode';
+// import Newsletter from './NavBar/Newsletter';
+// import Config from './NavBar/Config';
 
 import { useState, useEffect } from "react";
 
@@ -32,21 +32,21 @@ export default function Navbar() {
       {/* Main */}
       <nav>
         {/* Home */}
-        <Home/>
+        {/* <Home/> */}
         {/* Time */}
-        <Time/>
+        {/* <Time/> */}
       </nav>
       {/* Search */}
       <div></div>
       <nav>
         {/* Newsletter */}
-        <Newsletter/>
+        {/* <Newsletter/> */}
         {/* Mode */}
-        <Mode toggleTheme={toggleTheme} theme={theme}/>
+        {/* <Mode toggleTheme={toggleTheme} theme={theme}/> */}
         {/* Lenguage */}
-        <div>ES</div>
+        {/* <div>ES</div> */}
         {/* Config */}
-        <Config/>
+        {/* <Config/> */}
       </nav>
     </header>
   );
