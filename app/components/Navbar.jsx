@@ -42,7 +42,7 @@ export default function Navbar() {
         {/* Newsletter */}
         {/* <Newsletter/> */}
         {/* Mode */}
-        <Mode toggleTheme={toggleTheme} theme={theme}/>
+{/*         <Mode toggleTheme={toggleTheme} theme={theme}/> */}
         {/* Lenguage */}
         <div>ES</div>
         {/* Config */}
