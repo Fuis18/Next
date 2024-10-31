@@ -1,7 +1,7 @@
 import Link from "next/link";
 export default function Home() {
   return (
-    <Link href="/" className="home">
+    <Link href="/" className="home" title="Inicio">
       <svg viewBox="0 0 100 100">
         <path strokeWidth=".5" d="
           M15 65 L15 95 Q15 100 20 100 L42 100 L42 75 L58 75 L58 100 L80 100 Q85 100 85 95 L85 65 L50 35z
