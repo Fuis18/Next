@@ -2,13 +2,13 @@
 // import Moon from './Moon';
 
 export default function Mode({ toggleTheme, theme }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      className="mode"
-      onClick={toggleTheme}
-    >
-      {theme === "light" ? <Sun /> : <Moon />}
-    </svg>
+  return (<></>
+    // <svg
+    //   viewBox="0 0 24 24"
+    //   className="mode"
+    //   onClick={toggleTheme}
+    // >
+    //   {theme === "light" ? <Sun /> : <Moon />}
+    // </svg>
   )
 }
