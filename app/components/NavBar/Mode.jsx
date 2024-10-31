@@ -1,5 +1,5 @@
-import Sun from './Sun';
-import Moon from './Moon';
+// import Sun from './Sun';
+// import Moon from './Moon';
 
 export default function Mode({ toggleTheme, theme }) {
   return (
