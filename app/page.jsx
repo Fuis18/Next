@@ -8,7 +8,7 @@ export default function Home() {
   const [pages, setPages] = useState([]);
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/`)
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}`)
       .then((response) => response.json())
       .then((data) => {
         setPages(data[0]);
