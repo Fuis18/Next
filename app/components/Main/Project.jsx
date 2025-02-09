@@ -1,12 +1,17 @@
 "use client";
 import Link from "next/link";
-// let a = document.createElement("a");
-// a.href = `pages/${i}/index.html`;
-// a.click();
+import Image from "next/image";
+
 export default function Project({ id, title }) {
   return (
-    <Link href={`pages/${id}/`} key={id} className="form__div-link">
-      <div className="form__div">{title}</div>
+    <Link href={`/pages/${id}/`} className="form__div">
+      <Image
+        src={`/img/1.png`}
+        width={120}
+        height={120}
+        alt={title}
+      />
+      {title}
     </Link>
   );
 }

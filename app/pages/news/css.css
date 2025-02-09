@@ -1,0 +1,26 @@
+.news {
+  display: grid;
+  grid-template:
+    "autor" auto
+    "version" auto;
+}
+.news__autor {
+  grid-area: autor;
+  font-size: 2em;
+  font-family: "courier new", "GeistMonoVF";
+}
+.news__info {
+  grid-area: info;
+}
+.news__version {
+  grid-area: version;
+}
+.news__version-content {
+  display: flex;
+  padding: 10px 15px;
+  gap: 35px;
+}
+.news__version-title {
+  font-size: 1.3em;
+  font-weight: bold;
+}

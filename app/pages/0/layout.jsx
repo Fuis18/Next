@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Iterador",
+  title: "Proporciones",
 };
 
 export default function RootLayout({ children }) {

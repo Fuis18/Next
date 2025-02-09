@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Calculadora",
+  title: "Admisión - Larc War",
 };
 
 export default function RootLayout({ children }) {

@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Funciones",
+  title: "Relog",
 };
 
 export default function RootLayout({ children }) {

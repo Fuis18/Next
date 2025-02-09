@@ -1,54 +1,114 @@
+.f3,
+.f3__buttons-s,
+.f3__buttons-b {
+  display: grid;
+  grid-gap: 10px;
+  align-items: start;
+}
 .f3 {
+  grid-template:
+    "windows" auto
+    "buttons" auto
+    "buttonb" auto
+    "process" auto
+    / 1fr;
+}
+.f3__window {
+  grid-area: windows;
+  background: #cfc;
+  border-radius: 8px;
+  padding: 5px 14px;
+  overflow-y: overlay;
+}
+.f3__window-operation,
+.f3__window-text,
+.f3__window-answer,
+.f3__window-history {
+  color: #000;
+  line-height: normal;
+  min-height: 20px;
+}
+.f3__window-quest {
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  font-family: monospace;
+  font-size: 16px;
+}
+.f3__window-text {
+  font-weight: 700;
+  animation: animate-blink 1s forwards infinite;
+}
+.f3__window-answer,
+.f3__window-history {
+  text-align: right;
+  font-family: DS-DIGI;
+  font-size: 20px;
+}
+.f3__buttons-b {
+  grid-area: buttonb;
+  grid-template-columns: repeat(5, 1fr);
+}
+.f3__buttons-s {
+  grid-area: buttons;
+  grid-template-columns: repeat(6, 1fr);
+}
+.f3__buttons-s button,
+.f3__buttons-b button {
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  font-weight: 700;
+  color: #fff;
+  box-shadow: 1px 1px 5px 0 #000;
+  text-align: center;
+  align-content: center;
+}
+.f3__button-s {
+  background: #223;
+  height: 25px;
+  font-size: 14px;
+}
+.f3__button-b {
+  background: #777;
+  height: 30px;
+  font-size: 18px;
+}
+.f3__button-n[value="DEL"],
+.f3__button-n[value="AC"] {
+  background: #c55;
+}
+.f3__process {
+  font-family: math;
+  grid-area: process;
+  min-height: 50px;
+  border-left: 3px solid var(--color-title);
+  padding-left: 10px;
   color: var(--color-text);
 }
-.div-inline {
- display: inline-block;
- margin: 0 8px;
- font-family: monospace;
+@keyframes animate-blink {
+  0% {
+    filter: opacity(1);
+  }
+  50% {
+    filter: opacity(0);
+  }
+  90% {
+    filter: opacity(1);
+  }
+  100% {
+    filter: opacity(1);
+  }
 }
-.div-block {
- display: block;
- margin: 0 10px;
- font-family: monospace;
-}
-.none {
- display: none;
-}
-.block {
- display: inline-block;
-}
-.numbers-input {
- width: 11px;
- height: 11px;
- border-radius: 50px;
- display: inline-block;
-}
-.numbers-input:hover {
- cursor: pointer;
-}
-.button-inactive {
- background: #d11;
-}
-.button-active {
- background:  #11d;
-}
-.error-active {
- display: block;
- background: var(--err-background);
- border: 1px solid var(--err-border);
- border-radius: 50px;
- color: var(--err-text);
- padding: 5px 10px;
-  margin: 5px 0;
- width: max-content;
-}
-.error-inactive {
- display: none;
-}
-.submit {
- padding: 3px;
- cursor: pointer;
- width: min-content;
+@media screen and (min-width: 900px) {
+  .f3 {
+    grid-template:
+      "windows process" auto
+      "buttons process" auto
+      "buttonb process" auto
+      / 7fr 4fr;
+  }
+  .f3__history-div {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }

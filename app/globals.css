@@ -3,6 +3,26 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+@font-face {
+  font-family: "DS-DIGI";
+  src: url("/fonts/DS-DIGI.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "GeistMonoVF";
+  src: url("/fonts/GeistMonoVF.woff") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "GeistVF";
+  src: url("/fonts/GeistVF.woff") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 html[data-theme="dark"] {
   --background-main: #333;
   --background-side: #555;
@@ -21,9 +41,6 @@ html[data-theme="dark"] {
   --err-color: #f77;
   --err-background: #300;
   --err-border: #a00;
-  --sucess-color: #161;
-  --sucess-background: #2c2;
-  --sucess-border: #1a2;
 }
 html[data-theme="light"] {
   --background-main: #8de;
@@ -55,12 +72,12 @@ html[data-theme="old"] {
   --err-color: #f00;
   --err-background: #fcc;
   --err-border: #f99;
-  --sucess-color: #161;
-  --sucess-background: #2c2;
-  --sucess-border: #1a2;
 }
 html {
   border-right: 1px solid var(--background-side);
+  --sucess-color: #161;
+  --sucess-background: #2c2;
+  --sucess-border: #1a2;
 }
 body {
   min-width: 210px;
@@ -71,12 +88,14 @@ h1 {
   font-size: 2em;
   font-weight: bold;
 }
-h1,
-h2 {
+h1, h2 {
   text-align: center;
 }
 h1, h2, h3 {
   color: var(--color-title);
+}
+div {
+  color: var(--color-text);
 }
 select, a, input {
   color: var(--color-text);
@@ -138,30 +157,34 @@ main {
   display: block;
 }
 .form__div {
-  padding: 4px 8px;
-  border: 1px solid var(--border);
-  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-width: 120px;
+}
+.form__div img {
+  object-fit: contain;
+}
+.form__div, .button {
+  margin: 0 5px;
   text-align: center;
+  align-items: center;
+  padding: 4px 8px;
   cursor: pointer;
 }
-.form__div:hover {
+.form__div:hover, .button:hover {
   background: var(--hover);
 }
-.form__div:active {
+.form__div:active, .button:active {
   background: var(--active);
-}
-.form__div-link {
-  margin: 5px;
-  min-width: 120px;
 }
 .a {
   white-space: pre-wrap;
 }
 .button {
-  border-radius: 5px;
-  width: 30px;
-  height: 30px;
-  margin: auto;
+  font-size: 1em;
+  border: 1px solid var(--border);
+  border-radius: 50px;
 }
 ::-webkit-inner-spin-button {
   display: none;

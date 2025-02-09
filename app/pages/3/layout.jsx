@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Repetidor",
+  title: "Calculadora",
 };
 
 export default function RootLayout({ children }) {

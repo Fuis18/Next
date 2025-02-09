@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "IA Text & Background",
+  title: "Funciones",
 };
 
 export default function RootLayout({ children }) {

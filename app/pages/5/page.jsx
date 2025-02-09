@@ -4,8 +4,13 @@ import "./css.css";
 
 export default function Page() {
   return (
-    <Main title="Funciones" className="cont__pages">
-      <div className="f2">
+    <Main title="Relog" className="cont__pages">
+      <div className="f5">
+        <div className="f5__options">
+          <button className="f5__clock button">Hora</button>
+          <button className="f5__temporizador button">Temporizador</button>
+          <button className="f5__cronometro button">Crónometro</button>
+        </div>
       </div>
     </Main>
   );

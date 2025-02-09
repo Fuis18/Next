@@ -3,10 +3,11 @@ import '@/public/styles/header.css';
 import Home from './NavBar/Home';
 import Time from './NavBar/Time';
 import Mode from './NavBar/Mode';
-import Newsletter from './NavBar/Newsletter';
+import Newsletter from './NavBar/News';
 import Config from './NavBar/Config';
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function Navbar() {
   const [theme, setTheme] = useState("light"); // Default to light
@@ -32,7 +33,9 @@ export default function Navbar() {
       {/* Main */}
       <nav>
         {/* Home */}
-        <Home/>
+        <Link href="/" className="home" title="Inicio">
+          <Home/>
+        </Link>
         {/* Time */}
         <Time/>
       </nav>
@@ -40,13 +43,17 @@ export default function Navbar() {
       <div></div>
       <nav>
         {/* Newsletter */}
-        <Newsletter/>
+        <Link href="/pages/news/">
+          <Newsletter/>
+        </Link>
         {/* Mode */}
         <Mode toggleTheme={toggleTheme} theme={theme}/>
         {/* Lenguage */}
         <div>ES</div>
         {/* Config */}
-        <Config/>
+        <Link href="/pages/config/">
+          <Config/>
+        </Link>
       </nav>
     </header>
   );

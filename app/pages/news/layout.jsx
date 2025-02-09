@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Iterador",
+  title: "News",
 };
 
 export default function RootLayout({ children }) {
