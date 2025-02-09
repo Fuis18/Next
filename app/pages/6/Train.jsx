@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import train from '@/app/data/train.json';
 import Script from 'next/script';
 
 export default function Train({ setNetwork }) {
@@ -27,7 +26,7 @@ export default function Train({ setNetwork }) {
 
       initNetwork();
     }
-  }, [brainLoaded, setNetwork]);
+  }, [brainLoaded, setNetwork, train]);
 
   return (
     <>
