@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { API_URL } from "@/config";
 import Script from 'next/script';
 
 export default function Train({ setNetwork }) {
@@ -6,7 +7,7 @@ export default function Train({ setNetwork }) {
   const [train, setTrain] = useState({});
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/pages/r6`)
+    fetch(`${API_URL}/r6`)
       .then((response) => response.json())
       .then((data) => {
         setTrain(data);

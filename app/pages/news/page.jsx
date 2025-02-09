@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Main from "@/app/components/Main";
+import { API_URL } from "@/config";
 import Version from "./Version";
 import "./css.css";
 
@@ -9,7 +10,7 @@ export default function Page() {
   const [versions, setVersions] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4000/news")
+    fetch(`${API_URL}/news`)
       .then((response) => response.json())
       .then((data) => {
         setAutor(data.autor);
