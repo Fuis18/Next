@@ -1,6 +1,7 @@
 "use client";
 import Main from "@/app/components/Main";
 import "./css.css";
+import ClockPicker from './ClockPicker'
 
 export default function Page() {
   return (
@@ -10,6 +11,9 @@ export default function Page() {
           <button className="f5__clock button">Hora</button>
           <button className="f5__temporizador button">Temporizador</button>
           <button className="f5__cronometro button">Crónometro</button>
+        </div>
+        <div>
+          <ClockPicker/>
         </div>
       </div>
     </Main>

@@ -160,16 +160,12 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  min-width: 120px;
-}
-.form__div img {
-  object-fit: contain;
+  width: 120px;
 }
 .form__div, .button {
-  margin: 0 5px;
   text-align: center;
   align-items: center;
-  padding: 4px 8px;
+  padding: 4px 10px;
   cursor: pointer;
 }
 .form__div:hover, .button:hover {
@@ -177,6 +173,9 @@ main {
 }
 .form__div:active, .button:active {
   background: var(--active);
+}
+.form__div img {
+  object-fit: contain;
 }
 .a {
   white-space: pre-wrap;

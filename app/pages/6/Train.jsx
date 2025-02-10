@@ -7,7 +7,7 @@ export default function Train({ setNetwork }) {
   const [train, setTrain] = useState({});
 
   useEffect(() => {
-    fetch(`${API_URL}/r6`)
+    fetch(`${API_URL}/pages/r6`)
       .then((response) => response.json())
       .then((data) => {
         setTrain(data);
@@ -21,7 +21,8 @@ export default function Train({ setNetwork }) {
         const network = new brain.NeuralNetwork();
         network.fromJSON(trainingData)
         
-        console.log(network,trainingData)
+        // console.log(network) // objeto
+        // console.log(trainingData) // train.json
         setNetwork(network); // Update the state with the trained network
       }
 

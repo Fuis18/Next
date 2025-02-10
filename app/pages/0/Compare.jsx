@@ -5,7 +5,7 @@ export default function Compare({ mode, left, right, onChange }) {
   } else if (mode === "active") {
     type = "number";
   } else if (mode === "inactive") {
-    type = "text";
+    type = "number";
   } else {
     console.error("Modo desconocido:", mode);
   }

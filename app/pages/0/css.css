@@ -2,8 +2,12 @@
   display: grid;
   grid-gap: 10px;
   justify-items: center;
-  grid-template-columns: repeat(3, 200px);
+  grid-template-columns: 90px 50px 90px;
   justify-content: center;
+  text-align-last: center;
+}
+.f0 input {
+  width: 100%;
 }
 .f0 input[type="string"] {
   border: none;
