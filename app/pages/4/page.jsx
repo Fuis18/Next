@@ -36,12 +36,12 @@ export default function Page() {
   const exportMail = (e) => {
     e.preventDefault();
 
-    fetch(`${API_URL}/pages/m4`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({send: true}),
-    })
-    setResultData([])
+    // fetch(`${API_URL}/pages/m4`, {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify({send: true}),
+    // })
+    // setResultData([])
   }
 
   useEffect(() => {
