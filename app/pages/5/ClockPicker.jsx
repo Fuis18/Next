@@ -1,40 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./clock.css";
 
-const Button = ({
-  onClick = () => {},
-  children = null,
-  className = "",
-  onMouseEnter,
-  onMouseLeave,
-}) => {
-  const [pressed, setPressed] = useState(false);
-
-  const handleMouseDown = () => setPressed(true);
-  const handleMouseUp = () => setPressed(false);
-  const handleMouseEnter = () => {
-    if (onMouseEnter) onMouseEnter();
-  };
-  const handleMouseLeave = () => {
-    handleMouseUp();
-    if (onMouseLeave) onMouseLeave();
-  };
-
-  return (
-    <div
-      onClick={onClick}
-      className={buttonClass}
-      onMouseUp={handleMouseUp}
-      onMouseOut={handleMouseUp}
-      onMouseDown={handleMouseDown}
-      onMouseLeave={handleMouseLeave}
-      onMouseEnter={handleMouseEnter}
-    >
-      <div className="wrapper">{children}</div>
-    </div>
-  );
-};
-
 export default function ClockPicker() {
   const isActive = () => {
     if (focused) return "active";
@@ -329,19 +295,19 @@ export default function ClockPicker() {
                 </div>
               </div>
             </div>
-            <div class="picker_handler">
+            <div className="picker_handler">
               <div
-                class="picker_pointer animation"
+                className="picker_pointer animation"
                 style={{height: 107.5 + "px", top: 22.5 + "px", transform: "translateX(-50%) rotate(360deg)"}}
               >
                 <div
-                  class="pointer_drag draggable"
+                  className="pointer_drag draggable"
                   style={{transform: "rotate(-360deg)"}}
                 >
                   12
                 </div>
               </div>
-              <div class="picker_center"></div>
+              <div className="picker_center"></div>
             </div>
             <div className="picker_handler">
               <div className="picker_pointer animation">

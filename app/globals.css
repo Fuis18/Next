@@ -5,20 +5,26 @@
 }
 
 @font-face {
-  font-family: "DS-DIGI";
+  font-family: "ds-digi";
   src: url("/fonts/DS-DIGI.TTF") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: "GeistMonoVF";
+  font-family: "geistMonoVF";
   src: url("/fonts/GeistMonoVF.woff") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: "GeistVF";
+  font-family: "geistVF";
   src: url("/fonts/GeistVF.woff") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "avenir";
+  src: url("/fonts/Avenir_LT_35_Light.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -140,7 +146,7 @@ select option {
 /* Desarrollo */
 main {
   background: var(--background-main);
-  margin: 12px;
+  margin: 12px 0;
   padding: 5px;
 }
 .container {
@@ -215,4 +221,9 @@ main {
 }
 ::-webkit-scrollbar-thumb {
   background-color: var(--background-main);
+}
+@media screen and (min-width: 500px) {
+  main {
+    margin: 12px;
+  }
 }

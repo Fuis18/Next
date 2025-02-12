@@ -54,11 +54,11 @@ const calculate = (quest, answer) => {
         if (nParenthesis == 0 && bParenthesis) {
           let temporal = calculate(arr.slice(startIdx + 1, i));
           progress.push(temporal[1]);
-          console.log(temporal[1]);
+          // console.log(temporal[1]);
           temporal = temporal[0];
           if (isNaN(stack[stack.length - 1])) stack.push(temporal);
           else stack.push("x", temporal);
-          console.log(stack)
+          // console.log(stack)
           bParenthesis = false;
           mParenthesis = true;
         }
@@ -186,16 +186,16 @@ const calculate = (quest, answer) => {
 
   // Separar parentesis
   quest = processParentheses(quest);
-  console.log("Respuesta ", quest);
+  // console.log("Respuesta ", quest);
   progress.push(quest);
 
   // Separar en Suma y resta
   quest = separator(quest);
-  console.log("Respuesta ", quest);
+  // console.log("Respuesta ", quest);
 
   // Resuelve
   quest = quest.map(operator);
-  console.log("Respuesta ", quest);
+  // console.log("Respuesta ", quest);
   progress.push(quest);
   
   // Aplanar Arrays
@@ -325,43 +325,45 @@ export default function Page() {
   return (
     <Main title="Calculadora" className="cont__pages">
       <div className="f3" ref={buttonsRef}>
-        <div className="f3__window">
-          <div className="f3__window-history">{history}</div>
-          <div className="f3__window-quest">
-            <div className="f3__window-operation">{operation}</div>
-            <div className="f3__window-text">_</div>
+        <div className="f3__calculator">
+          <div className="f3__window">
+            <div className="f3__window-history">{history}</div>
+            <div className="f3__window-quest">
+              <div className="f3__window-operation">{operation}</div>
+              <div className="f3__window-text">_</div>
+            </div>
+            <div className="f3__window-answer">{answer}</div>
           </div>
-          <div className="f3__window-answer">{answer}</div>
-        </div>
-        <div className="f3__buttons-s">
-          <Button type="1" text="(" value="(" />
-          <Button type="1" text=")" value=")" />
-          <Button type="1" text="√" value="v" />
-          <Button type="1" text="x²" value="^2" />
-          <Button type="1" text="^(x)" value="^" />
-          <Button type="1" text="%" value="%" />
-        </div>
-        <div className="f3__buttons-b">
-          <Button type="0" text="7" value="7" />
-          <Button type="0" text="8" value="8" />
-          <Button type="0" text="9" value="9" />
-          <Button type="0" text="DEL" value="DEL" />
-          <Button type="0" text="AC" value="AC" />
-          <Button type="0" text="4" value="4" />
-          <Button type="0" text="5" value="5" />
-          <Button type="0" text="6" value="6" />
-          <Button type="0" text="x" value="x" />
-          <Button type="0" text="/" value="/" />
-          <Button type="0" text="1" value="1" />
-          <Button type="0" text="2" value="2" />
-          <Button type="0" text="3" value="3" />
-          <Button type="0" text="+" value="+" />
-          <Button type="0" text="-" value="-" />
-          <Button type="0" text="0" value="0" />
-          <Button type="0" text="•" value="." />
-          <Button type="0" text="EXP" value="EXP" />
-          <Button type="0" text="ANS" value="ANS" />
-          <Button type="0" text="=" value="=" />
+          <div className="f3__buttons-s">
+            <Button type="1" text="(" value="(" />
+            <Button type="1" text=")" value=")" />
+            <Button type="1" text="√" value="v" />
+            <Button type="1" text="x²" value="^2" />
+            <Button type="1" text="^(x)" value="^" />
+            <Button type="1" text="%" value="%" />
+          </div>
+          <div className="f3__buttons-b">
+            <Button type="0" text="7" value="7" />
+            <Button type="0" text="8" value="8" />
+            <Button type="0" text="9" value="9" />
+            <Button type="0" text="DEL" value="DEL" />
+            <Button type="0" text="AC" value="AC" />
+            <Button type="0" text="4" value="4" />
+            <Button type="0" text="5" value="5" />
+            <Button type="0" text="6" value="6" />
+            <Button type="0" text="x" value="x" />
+            <Button type="0" text="/" value="/" />
+            <Button type="0" text="1" value="1" />
+            <Button type="0" text="2" value="2" />
+            <Button type="0" text="3" value="3" />
+            <Button type="0" text="+" value="+" />
+            <Button type="0" text="-" value="-" />
+            <Button type="0" text="0" value="0" />
+            <Button type="0" text="•" value="." />
+            <Button type="0" text="EXP" value="EXP" />
+            <Button type="0" text="ANS" value="ANS" />
+            <Button type="0" text="=" value="=" />
+          </div>
         </div>
         <Process data={process}/>
       </div>

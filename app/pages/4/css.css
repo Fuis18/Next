@@ -1,17 +1,58 @@
-.f4__form-content {
+.f4 {
   display: grid;
-  margin-bottom: 10px
+  grid-gap: 18px;
+  font-family: "avenir", sans-serif;
+  grid-template:
+    "img" auto
+    "form" auto
+    "res" auto
+    / auto;
+}
+.f4__img {
+  grid-area: img;
+}
+.f4__form {
+  display: grid;
+  grid-gap: 10px 22px;
+  justify-content: center;
+  grid-area: form;
+  grid-template:
+    "name" auto
+    "last" auto
+    "mail" auto
+    "about" auto
+    "submit" auto
+    / 1fr;
 }
 .f4__form input {
-   padding: 5px;
+  padding: 5px;
+}
+.from__input-content.name {
+  grid-area: name;
+}
+.from__input-content.last {
+  grid-area: last;
+}
+.from__input-content.mail {
+  grid-area: mail;
+}
+.from__input-content.about {
+  grid-area: about;
+}
+.from__input-content.about input {
+  height: 86px;
 }
 .f4__form input[type="submit"] {
   padding: 5px 10px;
+  grid-area: submit;
 }
 .from__input-content {
   display: flex;
   flex-direction: column;
-  padding: 5px 0;
+  grid-gap: 9px;
+}
+.f4__response-content {
+  grid-area: res;
 }
 .f4__response {
   display: flex;
@@ -26,12 +67,29 @@
   max-width: 700px;
   height: min-content;
 }
-.f4__response__joined-group, .f4__response__joined-input {
+.f4__response__joined-group,
+.f4__response__joined-input {
   display: flex;
   flex-wrap: wrap;
 }
-@media screen and (min-width: 800px) {
-  .f4__form-content {
-    grid-template-columns: 1fr 1fr;
+@media screen and (min-width: 600px) {
+  .f4 {
+    grid-template:
+    "img form" auto
+    "res res" auto
+    / auto auto;
+  }
+  .f4__form {
+    grid-template-columns: 293px;
+  }
+}
+@media screen and (min-width: 900px) {
+  .f4__form {
+    grid-template-columns: 293px 293px;
+    grid-template-areas:
+      "name  last"
+      "mail  mail"
+      "about about"
+      "submit submit";
   }
 }

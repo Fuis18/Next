@@ -8,21 +8,15 @@ import Joined from "./Joined";
 import Image from "next/image";
 
 export default function Page() {
-  const [formData, setFormData] = useState({
-    name: "",
-    last: "",
-    mail: "",
-    about: "",
-  });
-
+  const [formData, setFormData] = useState({ name: "", last: "", mail: "", about: "" });
   const [resultData, setResultData] = useState([]);
-  const fromRef = useRef(null);
 
+  // Manejo de cambios en los inputs
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-    console.log(formData);
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
+  // Envío del formulario
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -35,8 +29,20 @@ export default function Page() {
       .then((data) => {
         setResultData(data.message);
         setFormData({ name: "", last: "", mail: "", about: "" });
-      });
+      }
+    );
   };
+
+  const exportMail = (e) => {
+    e.preventDefault();
+
+    fetch(`${API_URL}/pages/m4`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({send: true}),
+    })
+    setResultData([])
+  }
 
   useEffect(() => {
     fetch(`${API_URL}/pages/r4`)
@@ -49,58 +55,58 @@ export default function Page() {
   return (
     <Main title="Admisión para Larc War" className="cont__pages">
       <div className="f4">
-        <div className="f4__form-content">
-          <Image
-            src="/img/1.png"
-            width={200}
-            height={200}
-            alt="Admisión Larc War"
-          />
-          {/* Formulario */}
-          <form className="f4__form" onSubmit={handleSubmit} ref={fromRef}>
-            <Input
-              id="name"
-              name="name"
-              onChange={handleChange}
-              value={formData.name}
-            >
-              Nombre
-            </Input>
-            <Input
-              id="last"
-              name="last"
-              onChange={handleChange}
-              value={formData.last}
-            >
-              Apellido
-            </Input>
-            <Input
-              id="mail"
-              name="mail"
-              onChange={handleChange}
-              value={formData.mail}
-            >
-              Correo
-            </Input>
-            <Input
-              id="about"
-              name="about"
-              onChange={handleChange}
-              value={formData.about}
-            >
-              Asunto
-            </Input>
-            <input type="submit" value="Enviar" />
-          </form>
-        </div>
-        <div className="f4__response-content">
+        <Image
+          src="/img/1.png"
+          width={200}
+          height={200}
+          alt="Admisión Larc War"
+          className="f4__img"
+        />
+        {/* Formulario */}
+        <form className="f4__form" onSubmit={handleSubmit}>
+          <Input
+            id="name"
+            name="name"
+            onChange={handleChange}
+            value={formData.name}
+          >
+            Nombre
+          </Input>
+          <Input
+            id="last"
+            name="last"
+            onChange={handleChange}
+            value={formData.last}
+          >
+            Apellido
+          </Input>
+          <Input
+            id="mail"
+            name="mail"
+            onChange={handleChange}
+            value={formData.mail}
+          >
+            Correo
+          </Input>
+          <Input
+            id="about"
+            name="about"
+            onChange={handleChange}
+            value={formData.about}
+          >
+            Asunto
+          </Input>
+          <input type="submit" value="Enviar" />
+        </form>
+        <form className="f4__response-content" onSubmit={exportMail}>
           <h2>Usuarios registrados</h2>
           <div className="f4__response">
             {resultData.map((info, i) => (
               <Joined key={i} data={info} />
             ))}
           </div>
-        </div>
+          <input type="submit" value="Exportar"/>
+        </form>
       </div>
     </Main>
   );

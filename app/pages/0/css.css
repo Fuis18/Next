@@ -9,6 +9,6 @@
 .f0 input {
   width: 100%;
 }
-.f0 input[type="string"] {
+.f0 input[type="text"] {
   border: none;
 }

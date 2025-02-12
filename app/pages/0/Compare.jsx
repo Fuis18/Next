@@ -1,13 +1,9 @@
 export default function Compare({ mode, left, right, onChange }) {
   let type = "text";
-  if (mode === "block") {
-    type = "string";
-  } else if (mode === "active") {
+  if (mode === "title") {
+    type = "text";
+  } else if (mode === "number") {
     type = "number";
-  } else if (mode === "inactive") {
-    type = "number";
-  } else {
-    console.error("Modo desconocido:", mode);
   }
 
   return (
