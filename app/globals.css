@@ -29,7 +29,7 @@
   font-style: normal;
 }
 
-html[data-theme="dark"] {
+body[data-theme="dark"] {
   --background-main: #333;
   --background-side: #555;
   --background-input: #333;
@@ -48,7 +48,7 @@ html[data-theme="dark"] {
   --err-background: #300;
   --err-border: #a00;
 }
-html[data-theme="light"] {
+body[data-theme="light"] {
   --background-main: #8de;
   --background-side: #eee;
   --color-text: #000;
@@ -58,7 +58,7 @@ html[data-theme="light"] {
   --border: #346;
   --invert: #eee;
 }
-html[data-theme="old"] {
+body[data-theme="old"] {
   --background-main: #9f9;
   --background-side: #eee;
   --color-text: #000;
@@ -67,8 +67,8 @@ html[data-theme="old"] {
   --active: #fff7;
   --border: #8be;
 }
-html[data-theme="light"],
-html[data-theme="old"] {
+body[data-theme="light"],
+body[data-theme="old"] {
   --background-input: #fff;
   --background-link: #f8f9fa;
   --placeholder-text: #555;
@@ -79,7 +79,7 @@ html[data-theme="old"] {
   --err-background: #fcc;
   --err-border: #f99;
 }
-html {
+body {
   border-right: 1px solid var(--background-side);
   --sucess-color: #161;
   --sucess-background: #2c2;
@@ -103,20 +103,24 @@ h1, h2, h3 {
 div {
   color: var(--color-text);
 }
-select, a, input {
+select, a, input, textarea {
   color: var(--color-text);
   border-color: var(--border-color);
   background: var(--background-main);
 }
-input {
+input, textarea {
   padding: 0 8px;
+}
+textarea {
+  line-height: 22px;
 }
 input::placeholder {
   background: var(--background-main);
   color: var(--placeholder-text);
 }
 input:focus-visible,
-button:focus-visible {
+button:focus-visible,
+textarea {
   outline: none;
 }
 button {
