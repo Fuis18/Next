@@ -10,13 +10,20 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 
 export default function Navbar() {
-  const [theme, setTheme] = useState("light"); // Default to light
+  const [theme, setTheme] = useState("");
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const storedTheme = localStorage.getItem("theme") || "light";
+      let storedTheme
+      if (localStorage.getItem("theme")) {
+        storedTheme = localStorage.getItem("theme");
+      } else if (window.matchMedia("(prefers-color-scheme : dark)").matches) {
+        storedTheme = "dark";
+      } else {
+        storedTheme = "light";
+      }
       setTheme(storedTheme);
-      document.documentElement.setAttribute("data-theme", storedTheme);
+      document.body.setAttribute("data-theme", storedTheme);
     }
   }, []);
 
@@ -25,7 +32,7 @@ export default function Navbar() {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
     localStorage.setItem("theme", newTheme);
-    document.documentElement.setAttribute("data-theme", newTheme);
+    document.body.setAttribute("data-theme", newTheme);
   };
 
   return (
