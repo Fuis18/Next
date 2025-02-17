@@ -11,7 +11,10 @@ export default function Train({ setNetwork }) {
       .then((response) => response.json())
       .then((data) => {
         setTrain(data);
+        // setBrainLoaded(true);
     });
+  }, [])
+  useEffect(() => {
 
     if (brainLoaded) {
       async function initNetwork() {
@@ -34,10 +37,11 @@ export default function Train({ setNetwork }) {
     <>
       <Script
         src="6/brain.js"
+        // src={`${API_URL}/pages/6/t6`}
         strategy="lazyOnload"
         onLoad={() => {
           console.log("brain.js loaded");
-          setBrainLoaded(true); // Set state when brain.js is loaded
+          setBrainLoaded(true);
         }}
       />
     </>

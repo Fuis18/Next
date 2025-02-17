@@ -1,7 +1,9 @@
+.f4__h1, .f4 {
+  font-family: "avenir", sans-serif;
+}
 .f4 {
   display: grid;
   grid-gap: 18px;
-  font-family: "avenir", sans-serif;
   grid-template:
     "img" auto
     "form" auto

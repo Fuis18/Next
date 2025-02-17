@@ -5,8 +5,8 @@ import "./css.css";
 
 export default function Page() {
   return (
-    <Main title="Funciones" className="cont__pages">
-      <div className="f2">
+    <Main title="Configuraciones" className="cont__pages">
+      <div className="config">
       </div>
     </Main>
   );

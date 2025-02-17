@@ -80,6 +80,9 @@ const handlingCommas = (arr) => {
         if (sign) return `+ ${-item} ${Math.sign(arr[j + 1]) == 1 ? " +" : ""}`;
         return `- ${-item} ${Math.sign(arr[j + 1]) == 1 ? " +" : ""}`;
       };
+      if (Math.sign(item) === 1) {
+        return `${item} ${Math.sign(arr[j + 1]) == 1 ? " +" : ""}`;
+      };
       return item;
     })
     .join(" ");

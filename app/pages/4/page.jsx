@@ -33,16 +33,16 @@ export default function Page() {
     );
   };
 
-  const exportMail = (e) => {
-    e.preventDefault();
+  // const exportMail = (e) => {
+  //   e.preventDefault();
 
-    // fetch(`${API_URL}/pages/m4`, {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify({send: true}),
-    // })
-    // setResultData([])
-  }
+  //   fetch(`${API_URL}/pages/m4`, {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify({send: true}),
+  //   })
+  //   setResultData([])
+  // }
 
   useEffect(() => {
     fetch(`${API_URL}/pages/r4`)
@@ -53,7 +53,7 @@ export default function Page() {
   }, []);
 
   return (
-    <Main title="Admisión para Larc War" className="cont__pages">
+    <Main title="Admisión para Larc War" className="cont__pages" fProject="f4">
       <div className="f4">
         <Image
           src="/img/1.png"
@@ -93,19 +93,20 @@ export default function Page() {
             name="about"
             onChange={handleChange}
             value={formData.about}
+            textarea={true}
           >
             Asunto
           </Input>
           <input type="submit" value="Enviar" />
         </form>
-        <form className="f4__response-content" onSubmit={exportMail}>
+        <form className="f4__response-content">
           <h2>Usuarios registrados</h2>
           <div className="f4__response">
             {resultData.map((info, i) => (
               <Joined key={i} data={info} />
             ))}
           </div>
-          <input type="submit" value="Exportar"/>
+          {/* <input type="submit" value="Exportar"/> */}
         </form>
       </div>
     </Main>

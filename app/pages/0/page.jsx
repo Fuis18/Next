@@ -32,20 +32,19 @@ export default function Page() {
     });
   };
 
-  const calculate = () => {
-    if (formData[0].right && formData[1].left && formData[0].left) {
-      const newRight = (parseInt(formData[0].right) * parseInt(formData[1].left)) / parseInt(formData[0].left);
+  const calculate = (data) => { // Recibimos `data` como argumento
+    if (data[0].right && data[1].left && data[0].left) {
+      const newRight = (parseFloat(data[0].right) * parseFloat(data[1].left)) / parseFloat(data[0].left);
   
       setFormData((prevData) =>
         prevData.map((item) =>
-          item.id === 1 && item.right !== newRight // ⚠️ Solo actualizar si hay un cambio
+          item.id === 1 && item.right !== newRight
             ? { ...item, right: newRight }
             : item
         )
       );
     }
   };
-
 
   return (
     <Main title="Proporciones" className="cont__pages">
