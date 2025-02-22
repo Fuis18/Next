@@ -3,6 +3,18 @@
   position: relative;
   width: 300px;
 }
+
+body[data-theme="light"] {
+  --clock-bg-primary: #3498db;
+  --clock-bg-secondary:  #f0f0f0;
+  --clock-bg-terciary: #3498db;
+}
+body[data-theme="dark"] {
+  --clock-bg-primary: #343434;
+  --clock-bg-secondary: #4a4a4a;
+  --clock-bg-terciary: #f4511e;
+}
+
 .react_times_button {
   user-select: none;
   position: relative;
@@ -60,6 +72,7 @@
 }
 .time_picker_preview {
   height: 50px;
+  background: var(--clock-bg-secondary);
 }
 .preview_container svg {
   width: 25px;
@@ -88,7 +101,7 @@
   -moz-transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
   -o-transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
   -webkit-transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
-  background-color: #fff;
+  background-color: var(--clock-bg-secondary);
   border-radius: 2px;
   top: 100%;
   left: 0;
@@ -112,7 +125,7 @@
   line-height: 75px;
   text-align: center;
   margin-bottom: 30px;
-  background-color: #3498db;
+  background-color: var(--clock-bg-primary);
   color: #fff;
   font-size: 2.5em;
   border-radius: 2px 2px 0 0;
@@ -137,7 +150,7 @@
   height: 260px;
   margin: 0 20px 20px;
   border-radius: 50%;
-  background-color: #f0f0f0;
+  background-color: var(--clock-bg-secondary);
   position: relative;
 }
 .picker_pointer_container {
@@ -197,7 +210,7 @@
 .picker_minute_point, .picker_pointer {
   left: 50%;
   position: absolute;
-  background-color: #3498db;
+  background-color: var(--clock-bg-terciary);
 }
 .picker_pointer .pointer_drag.draggable {
   cursor: move;
@@ -209,7 +222,7 @@
   border-radius: 50%;
   top: -17.5px;
   left: -15.5px;
-  background-color: #3498db;
+  background-color: var(--clock-bg-terciary);
   color: #fff;
   text-align: center;
   line-height: 35px;
@@ -218,7 +231,7 @@
   top: 50%;
   width: 10px;
   height: 10px;
-  background-color: #3498db;
+  background-color: var(--clock-bg-terciary);
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);

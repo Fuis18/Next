@@ -21,7 +21,7 @@ export default function Page() {
   return (
     <Main title="News" className="cont__pages">
       <div className="news">
-        <div className="news__autor">Autor: {autor}</div>
+        <div className="news__autor">{autor}</div>
         <div className="news__version">
           {versions.map((data, i) => (
             <Version key={i} id={i} data={data} />

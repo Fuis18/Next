@@ -6,8 +6,8 @@ export default function Version({ data, id }) {
       <Image
         className="news__version-image"
         src={`/img/1.png`}
-        width={200}
-        height={200}
+        width={150}
+        height={150}
         alt={`Versión ${id}`}
       />
       <div className="news__version-info">
