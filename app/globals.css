@@ -28,7 +28,16 @@
   font-weight: normal;
   font-style: normal;
 }
-
+body[data-theme="light"] {
+  --background-main: #8de;
+  --background-side: #eee;
+  --color-text: #000;
+  --color-title: #149;
+  --hover: #bef;
+  --active: #cef;
+  --border: #346;
+  --invert: #eee;
+}
 body[data-theme="dark"] {
   --background-main: #333;
   --background-side: #555;
@@ -47,16 +56,6 @@ body[data-theme="dark"] {
   --err-color: #f77;
   --err-background: #300;
   --err-border: #a00;
-}
-body[data-theme="light"] {
-  --background-main: #8de;
-  --background-side: #eee;
-  --color-text: #000;
-  --color-title: #149;
-  --hover: #bef;
-  --active: #cef;
-  --border: #346;
-  --invert: #eee;
 }
 body[data-theme="old"] {
   --background-main: #9f9;
@@ -162,6 +161,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 10px 0;
 }
 .cont__pages {
   display: block;
@@ -170,12 +170,11 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 120px;
+  width: 115px;
 }
 .form__div, .button {
   text-align: center;
   align-items: center;
-  padding: 4px 10px;
   cursor: pointer;
 }
 .form__div:hover, .button:hover {
@@ -192,8 +191,8 @@ main {
 }
 .button {
   font-size: 1em;
-  border: 1px solid var(--border);
-  border-radius: 50px;
+  border: none;
+  border-bottom: 3px solid var(--border);
 }
 ::-webkit-inner-spin-button {
   display: none;
