@@ -7,8 +7,8 @@ export default function Project({ id, title }) {
     <Link href={`/pages/${id}/`} className="form__div">
       <Image
         src={`/img/1.png`}
-        width={100}
-        height={100}
+        width={90}
+        height={90}
         alt={title}
       />
       {title}

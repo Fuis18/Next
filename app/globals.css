@@ -170,7 +170,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 115px;
+  width: 100px;
 }
 .form__div, .button {
   text-align: center;
@@ -224,9 +224,4 @@ main {
 }
 ::-webkit-scrollbar-thumb {
   background-color: var(--background-main);
-}
-@media screen and (min-width: 500px) {
-  main {
-    margin: 12px;
-  }
 }
