@@ -62,10 +62,10 @@ export default function Page() {
           let d0000 = `${beforeIteration}${i}${afterIteration}`;
 
           if (withZeros) {
-          d0 = `${beforeIteration}0${i}${afterIteration}`;
-          d00 = `${beforeIteration}00${i}${afterIteration}`;
-          d000 = `${beforeIteration}000${i}${afterIteration}`;
-          d0000 = `${beforeIteration}0000${i}${afterIteration}`;
+            d0 = `${beforeIteration}0${i}${afterIteration}`;
+            d00 = `${beforeIteration}00${i}${afterIteration}`;
+            d000 = `${beforeIteration}000${i}${afterIteration}`;
+            d0000 = `${beforeIteration}0000${i}${afterIteration}`;
           }
 
           let i9_i100 = i > 9 && i < 100;
@@ -86,7 +86,10 @@ export default function Page() {
           else if (i > 999 && i < 10000 && a9999_a100000) answer = d0;
           else answer = beforeIteration + i + afterIteration;
         } else {
-          answer = beforeIteration +`&nbsp;`.repeat(i.toString().length) + afterIteration;
+          answer =
+            beforeIteration +
+            `&nbsp;`.repeat(i.toString().length) +
+            afterIteration;
         }
 
         if (!isListed) answer = answer + "&nbsp;";
@@ -133,7 +136,7 @@ export default function Page() {
           />
         </div>
         <div>
-          Dato antes de la iteración:
+          Dato antes de la iteración:&nbsp;&nbsp;
           <input
             type="text"
             className="before-input"
@@ -151,15 +154,17 @@ export default function Page() {
         </div>
         {withNumbers && (
           <>
-            <div className="after">Dato luego de la iteración:</div>
-            <input
-              type="text"
-              className="after-input"
-              value={afterIteration}
-              onChange={(e) => setAfterIteration(e.target.value)}
-            />
+            <div className="after">
+              Dato luego de la iteración:&nbsp;&nbsp;
+              <input
+                type="text"
+                className="after-input"
+                value={afterIteration}
+                onChange={(e) => setAfterIteration(e.target.value)}
+              />
+            </div>
             <div className="zeros">
-              Con Cero(s) adelante:
+              Con Cero(s) adelante:&nbsp;&nbsp;
               <input
                 type="checkbox"
                 className="zeros-input"
