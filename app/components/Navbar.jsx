@@ -36,9 +36,9 @@ export default function Navbar() {
   };
 
   return (
-    <header>
+    <header role="banner" aria-hidden="true">
       {/* Main */}
-      <nav>
+      <nav role="navigation">
         {/* Home */}
         <Link href="/" className="home" title="Inicio">
           <Home/>
@@ -48,7 +48,7 @@ export default function Navbar() {
       </nav>
       {/* Search */}
       <div></div>
-      <nav>
+      <nav role="navigation">
         {/* Newsletter */}
         <Link href="/pages/news/">
           <Newsletter/>

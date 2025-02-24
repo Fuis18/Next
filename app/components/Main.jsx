@@ -1,6 +1,6 @@
 export default function Main({ title, className, children, fProject }) {
   return (
-    <main>
+    <main role="main">
       {fProject ? (
         <h1 className={`${fProject}__h1`}>{title}</h1>
       ) : (
