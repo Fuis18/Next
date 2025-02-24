@@ -3,9 +3,10 @@ header {
   background: var(--background-main);
   justify-content: space-between;
   padding: 0 20px;
-  height: 42px;
+  height: 47px;
   display: flex;
   align-items: center;
+  padding-top: 5px;
 }
 header nav {
   display: grid;
