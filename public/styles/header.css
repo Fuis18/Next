@@ -2,11 +2,10 @@
 header {
   background: var(--background-main);
   justify-content: space-between;
-  padding: 0 20px;
-  height: 47px;
+  padding: 3px 20px;
+  height: 46px;
   display: flex;
   align-items: center;
-  padding-top: 5px;
 }
 header nav {
   display: grid;
