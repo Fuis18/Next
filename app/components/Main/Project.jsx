@@ -9,7 +9,7 @@ export default function Project({ id, title }) {
         src={`/img/1.png`}
         width={90}
         height={90}
-        alt={title}
+        alt=""
       />
       {title}
     </Link>
