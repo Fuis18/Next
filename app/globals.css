@@ -70,10 +70,10 @@ body[data-theme="light"],
 body[data-theme="old"] {
   --background-input: #fff;
   --background-link: #f8f9fa;
-  --placeholder-text: #555;
+  --placeholder-text: #444;
   --color-link: #1452a8;
   --border-link: #ccc;
-  --border-color: #222 #777 #777 #222;
+  --border-color: #022;
   --err-color: #f00;
   --err-background: #fcc;
   --err-border: #f99;
@@ -107,8 +107,17 @@ select, a, input, textarea {
   border-color: var(--border-color);
   background: var(--background-main);
 }
-input, textarea {
-  padding: 0 8px;
+form {
+  display: grid;
+  grid-gap: 10px 22px;
+}
+.form__input-content {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 9px;
+}
+input[type="text"],input[type="number"],input[type="submit"], textarea {
+  padding: 5px;
 }
 textarea {
   line-height: 22px;
@@ -117,11 +126,11 @@ input::placeholder {
   background: var(--background-main);
   color: var(--placeholder-text);
 }
-input:focus-visible,
+/* input:focus-visible,
 button:focus-visible,
 textarea {
   outline: none;
-}
+} */
 button {
   color: var(--color-text);
   background: var(--background-main);
@@ -165,26 +174,6 @@ main {
 }
 .cont__pages {
   display: block;
-}
-.form__div {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  width: 100px;
-}
-.form__div, .button {
-  text-align: center;
-  align-items: center;
-  cursor: pointer;
-}
-.form__div:hover, .button:hover {
-  background: var(--hover);
-}
-.form__div:active, .button:active {
-  background: var(--active);
-}
-.form__div img {
-  object-fit: contain;
 }
 .a {
   white-space: pre-wrap;
