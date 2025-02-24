@@ -1,5 +1,6 @@
 "use client";
 import Main from "@/app/components/Main";
+import Checkbox from "@/app/components/Main/Checkbox";
 import "./css.css";
 import { useEffect, useState, useCallback, useRef } from "react";
 import Train from './Train';
@@ -32,20 +33,17 @@ const rgb = (hexcolor) => {
 
 export default function Page() {
   const [network, setNetwork] = useState(null);
-  const [colorText, setColorText] = useState(0);
+  const [colorText, setColorText] = useState(false);
   const [colorValue, setColorValue] = useState("#000000"); // Guardar el valor del color
   const colorInputRef = useRef(null);  // Ref para el input de color
-  const checkboxRef = useRef(null);  // Ref para el checkbox
   const sitioRef = useRef(null);  // Ref para el div de 'sitio'
 
   const rgb_ia = useCallback((r, g, b) => {
     let red = 0, green = 0, blue = 0;
-    if (colorText === 0) {
-      if (r > 0.5 || g > 0.5 || b > 0.5) {
-        red = 255; green = 255; blue = 255;
-      }
-    } else if (colorText === 1) {
+    if (colorText) {
       red = r * 255; green = g * 255; blue = b * 255;
+    } else if (r > 0.5 || g > 0.5 || b > 0.5) {
+      red = 255; green = 255; blue = 255;
     }
     return `rgb(${red},${green},${blue})`;
   }, [colorText]);
@@ -76,7 +74,7 @@ export default function Page() {
   };
 
   const handleCheckboxChange = () => {
-    setColorText(checkboxRef.current.checked ? 1 : 0); // Actualizar colorText
+    // setColorText(checkboxRef.current.checked ? 1 : 0); // Actualizar colorText
   };
 
   useEffect(() => {
@@ -88,14 +86,15 @@ export default function Page() {
   return (
     <Main title="IA Background-Text" className="cont__pages">
       <div className="f6">
-        <div>
-          <div>Color de fondo:</div>
+        <form>
+          <Checkbox
+            variable={colorText}
+            setVariable={setColorText}
+            nameChecked={"Color"}
+            nameUnchecked={"Monocromatico"}
+          ></Checkbox>
           <input type="color" id="color" ref={colorInputRef} value={colorValue} onChange={handleColorChange} />
-        </div>
-        <div className="text">
-          <div>Color de texto:</div>
-          <input type="checkbox" value="color" ref={checkboxRef} onChange={() => {handleCheckboxChange();}} />
-        </div>
+        </form>
         <div id="sitio" ref={sitioRef}>Mi sitio Web</div>
         <Train setNetwork={setNetwork}></Train>
       </div>

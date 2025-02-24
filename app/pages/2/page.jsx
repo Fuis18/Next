@@ -1,5 +1,6 @@
 "use client";
 import Main from "@/app/components/Main";
+import Checkbox from "@/app/components/Main/Checkbox";
 import "./css.css";
 import React, { useState, useEffect, useRef } from "react";
 
@@ -33,10 +34,6 @@ export default function Page() {
 
     validarCantidad();
   }, [amount]);
-
-  const handleNumberToggle = () => {
-    setWithNumbers(!withNumbers);
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -108,9 +105,9 @@ export default function Page() {
   return (
     <Main title="Iterador" className="cont__pages">
       <form className="f2" onSubmit={handleSubmit}>
-        <div>
-          Cantidad:
+        <div className="form__input-content">
           <input
+            placeholder="Cantidad"
             type="number"
             className="amount-input"
             onChange={handleAmountChange}
@@ -126,51 +123,49 @@ export default function Page() {
             </span>
           )}
         </div>
-        <div>
-          En listado:
-          <input
-            type="checkbox"
-            className="listado-input"
-            checked={isListed}
-            onChange={() => setIsListed(!isListed)}
-          />
+        <div className="form__input-content">
+          <Checkbox
+            variable={isListed}
+            setVariable={setIsListed}
+            nameChecked={"Listado"}
+            nameUnchecked={"En linea"}
+          ></Checkbox>
         </div>
-        <div>
-          Dato antes de la iteración:&nbsp;&nbsp;
+        <div className="form__input-content">
           <input
+            placeholder="Dato antes de la iteración"
             type="text"
             className="before-input"
             value={beforeIteration}
             onChange={(e) => setBeforeIteration(e.target.value)}
           />
         </div>
-        <div onClick={handleNumberToggle}>
-          Con números:
-          <div
-            className={`numbers-input ${
-              withNumbers ? "button-active" : "button-inactive"
-            }`}
-          />
+        <div className="form__input-content">
+          <Checkbox
+            variable={withNumbers}
+            setVariable={setWithNumbers}
+            nameChecked={"Con números"}
+            nameUnchecked={"Sin números"}
+          ></Checkbox>
         </div>
         {withNumbers && (
           <>
-            <div className="after">
-              Dato luego de la iteración:&nbsp;&nbsp;
+            <div className="form__input-content after">
               <input
+                placeholder="Dato luego de la iteración"
                 type="text"
                 className="after-input"
                 value={afterIteration}
                 onChange={(e) => setAfterIteration(e.target.value)}
               />
             </div>
-            <div className="zeros">
-              Con Cero(s) adelante:&nbsp;&nbsp;
-              <input
-                type="checkbox"
-                className="zeros-input"
-                checked={withZeros}
-                onChange={() => setWithZeros(!withZeros)}
-              />
+            <div className="form__input-content zeros">
+              <Checkbox
+                variable={withZeros}
+                setVariable={setWithZeros}
+                nameChecked={"Con Cero(s) adelante"}
+                nameUnchecked={"Sin Ceros adelante"}
+              ></Checkbox>
             </div>
           </>
         )}

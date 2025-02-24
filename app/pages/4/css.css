@@ -15,7 +15,6 @@
 }
 .f4__form {
   display: grid;
-  grid-gap: 10px 22px;
   justify-content: center;
   grid-area: form;
   grid-template:
@@ -26,32 +25,24 @@
     "submit" auto
     / 1fr;
 }
-.f4__form input {
-  padding: 5px;
-}
-.from__input-content.name {
+.form__input-content.name {
   grid-area: name;
 }
-.from__input-content.last {
+.form__input-content.last {
   grid-area: last;
 }
-.from__input-content.mail {
+.form__input-content.mail {
   grid-area: mail;
 }
-.from__input-content.about {
+.form__input-content.about {
   grid-area: about;
 }
-.from__input-content.about input {
+.form__input-content.about input {
   height: 86px;
 }
 .f4__form input[type="submit"] {
   padding: 5px 10px;
   grid-area: submit;
-}
-.from__input-content {
-  display: flex;
-  flex-direction: column;
-  grid-gap: 9px;
 }
 .f4__response-content {
   grid-area: res;
@@ -61,7 +52,6 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   gap: 12px;
-  padding: 10px 0;
 }
 .f4__response__joined {
   border: 1px solid var(--border);
@@ -79,10 +69,10 @@
     grid-template:
     "img form" auto
     "res res" auto
-    / auto auto;
+    / min-content auto;
   }
   .f4__form {
-    grid-template-columns: 293px;
+    grid-template-columns: minmax(0, 400px);
   }
 }
 @media screen and (min-width: 900px) {

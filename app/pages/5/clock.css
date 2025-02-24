@@ -69,6 +69,7 @@ body[data-theme="dark"] {
   -ms-transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
   -moz-transform: translateX(-50%);
+  
 }
 .time_picker_preview {
   height: 50px;
@@ -80,6 +81,7 @@ body[data-theme="dark"] {
   position: absolute;
   top: 12px;
   left: 0;
+  fill: var(--color-text);
 }
 .outside_container.active .modal_container {
   opacity: 1;
