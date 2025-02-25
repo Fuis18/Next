@@ -126,11 +126,11 @@ input::placeholder {
   background: var(--background-main);
   color: var(--placeholder-text);
 }
-/* input:focus-visible,
-button:focus-visible,
-textarea {
+input:read-only:focus-visible,
+button:read-only:focus-visible,
+textarea:read-only:focus-visible {
   outline: none;
-} */
+}
 button {
   color: var(--color-text);
   background: var(--background-main);

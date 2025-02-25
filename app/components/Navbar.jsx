@@ -3,7 +3,7 @@ import '@/public/styles/header.css';
 import Home from './NavBar/Home';
 import Time from './NavBar/Time';
 import Mode from './NavBar/Mode';
-import Newsletter from './NavBar/News';
+import News from './NavBar/News';
 import Config from './NavBar/Config';
 
 import { useState, useEffect } from "react";
@@ -36,7 +36,7 @@ export default function Navbar() {
   };
 
   return (
-    <header role="banner" aria-hidden="true">
+    <header role="banner">
       {/* Main */}
       <nav role="navigation">
         {/* Home */}
@@ -47,11 +47,11 @@ export default function Navbar() {
         <Time/>
       </nav>
       {/* Search */}
-      <div></div>
+      <div aria-hidden="true"></div>
       <nav role="navigation">
-        {/* Newsletter */}
+        {/* News */}
         <Link href="/pages/news/">
-          <Newsletter/>
+          <News/>
         </Link>
         {/* Mode */}
         <Mode toggleTheme={toggleTheme} theme={theme}/>

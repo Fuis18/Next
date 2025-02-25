@@ -21,7 +21,7 @@ export default function Time() {
   if (!time) return null; // Evita renderizar si time no está listo
 
   return (
-    <div className="time">
+    <div className="time" aria-hidden="true">
       <div className="hora">{addZeros(time.getHours())}</div>
       <div>:</div>
       <div className="min">{addZeros(time.getMinutes())}</div>
