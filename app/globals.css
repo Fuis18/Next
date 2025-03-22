@@ -71,7 +71,7 @@ body[data-theme="old"] {
 	--background-input: #fff;
 	--background-link: #f8f9fa;
 	--placeholder-text: #444;
-	--color-link: #1452a8;
+	--color-link: #139;
 	--border-link: #ccc;
 	--border-color: #022;
 	--err-color: #f00;
@@ -106,12 +106,15 @@ div {
 	color: var(--color-text);
 }
 select,
-a,
 input,
 textarea {
 	color: var(--color-text);
 	border-color: var(--border-color);
 	background: var(--background-main);
+}
+a {
+	color: var(--color-link);
+	/* text-decoration-line: none; */
 }
 form {
 	display: grid;
@@ -156,9 +159,7 @@ html[data-theme="dark"] input,
 html[data-theme="dark"] button {
 	border-width: 2px;
 }
-/* a {
-  text-decoration-line: none;
-} */
+
 select,
 select option {
 	background: var(--background-main);
