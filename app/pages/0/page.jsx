@@ -50,32 +50,8 @@ export default function Page() {
     <Main title="Proporciones" className="cont__pages">
       <div className="f0">
         <Compare mode="title" left="Variable" right="Resultado" />
-        <input
-          type="number"
-          name="left"
-          value={formData[0].left}
-          onChange={(e) => handleChange(e, formData[0].id)}
-        />
-        <div className="f0-middle">-</div>
-        <input
-          type="number"
-          name="right"
-          value={formData[0].right}
-          onChange={(e) => handleChange(e, formData[0].id)}
-        />
-        <input
-          type="number"
-          name="left"
-          value={formData[1].left}
-          onChange={(e) => handleChange(e, formData[1].id)}
-        />
-        <div className="f0-middle">-</div>
-        <input
-          type="text"
-          name="right"
-          value={formData[1].right}
-          readOnly
-        />
+        <Compare mode="number" left={formData[0].left} right={formData[0].right} on={handleChange} variable={formData[0].id} />
+        <Compare mode="number" left={formData[1].left} right={formData[1].right} on={handleChange} variable={formData[1].id} />
       </div>
     </Main>
   );
