@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Main from "@/app/components/Main";
 import "./css.css";
 import { API_URL } from "@/config";
-import FormItem from "./formItem";
+import FormItem from "./FormItem";
 
 export default function Page() {
 	const newPedido = () => ({
