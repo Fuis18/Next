@@ -96,6 +96,17 @@ export default function Page() {
 	}, []);
 
 	useEffect(() => {
+		const interval = setInterval(() => {
+			fetch(`${API_URL}/pages/r21`)
+				.then(res => res.json())
+				.then(data => setFormData(data))
+				.catch(err => console.error(err));
+		}, 1500); // cada 1.5s
+	
+		return () => clearInterval(interval);
+	}, []);
+	
+	useEffect(() => {
 		const timer = setTimeout(() => {
 			fetch(`${API_URL}/pages/r21`, {
 				method: "POST",
@@ -129,3 +140,4 @@ export default function Page() {
 		</Main>
 	);
 }
+
