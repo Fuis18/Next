@@ -98,14 +98,14 @@ export default function Page() {
 	useEffect(() => {
 		const interval = setInterval(() => {
 			fetch(`${API_URL}/pages/r21`)
-				.then(res => res.json())
-				.then(data => setFormData(data))
-				.catch(err => console.error(err));
-		}, 1500); // cada 1.5s
-	
+				.then((res) => res.json())
+				.then((data) => setFormData(data))
+				.catch((err) => console.error(err));
+		}, 5000); // cada 1.5s
+
 		return () => clearInterval(interval);
 	}, []);
-	
+
 	useEffect(() => {
 		const timer = setTimeout(() => {
 			fetch(`${API_URL}/pages/r21`, {
@@ -118,9 +118,9 @@ export default function Page() {
 				.then((response) => response.json())
 				.then((data) => console.log("Datos enviados:", data))
 				.catch((error) => console.error(error));
-		}, 4000);
+		}, 3000);
 
-		return () => clearTimeout(timer); // reinicia el timer si formData cambia antes de los 5s
+		return () => clearTimeout(timer);
 	}, [formData]);
 
 	return (
@@ -140,4 +140,3 @@ export default function Page() {
 		</Main>
 	);
 }
-
