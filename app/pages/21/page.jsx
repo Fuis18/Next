@@ -101,7 +101,7 @@ export default function Page() {
 				.then((res) => res.json())
 				.then((data) => setFormData(data))
 				.catch((err) => console.error(err));
-		}, 5000); // cada 1.5s
+		}, 10000);
 
 		return () => clearInterval(interval);
 	}, []);
@@ -118,7 +118,7 @@ export default function Page() {
 				.then((response) => response.json())
 				.then((data) => console.log("Datos enviados:", data))
 				.catch((error) => console.error(error));
-		}, 3000);
+		}, 2500);
 
 		return () => clearTimeout(timer);
 	}, [formData]);
