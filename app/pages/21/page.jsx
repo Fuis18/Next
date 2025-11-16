@@ -107,7 +107,8 @@ export default function Page() {
 		fetch(`${API_URL}/pages/r21`)
 			.then((response) => response.json())
 			.then((data) => {
-				setFormData(data.length === 0 ? INITIAL_STATE : data);
+				// ❗ Siempre empieza con tu estado
+				setFormData(INITIAL_STATE);
 			})
 			.catch((error) => console.error(error));
 	}, []);
@@ -146,3 +147,4 @@ export default function Page() {
 		</Main>
 	);
 }
+
