@@ -86,29 +86,11 @@ export default function Page() {
 		});
 	};
 
-	const INITIAL_STATE = [
-		{
-			enabled: true,
-			pedidos: [
-				{ pedido: "", enabled: true, complete: false },
-				{ pedido: "", enabled: false, complete: false },
-			],
-		},
-		{
-			enabled: false,
-			pedidos: [
-				{ pedido: "", enabled: true, complete: false },
-				{ pedido: "", enabled: false, complete: false },
-			],
-		},
-	];
-
 	useEffect(() => {
 		fetch(`${API_URL}/pages/r21`)
 			.then((response) => response.json())
 			.then((data) => {
-				// ❗ Siempre empieza con tu estado
-				setFormData(INITIAL_STATE);
+				setFormData(data);
 			})
 			.catch((error) => console.error(error));
 	}, []);
@@ -147,4 +129,3 @@ export default function Page() {
 		</Main>
 	);
 }
-
